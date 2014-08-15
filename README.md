@@ -1,4 +1,4 @@
-## Airpub-installer ![npm](https://badge.fury.io/js/airpub-installer.png)
+## airpub-installer ![npm](https://badge.fury.io/js/airpub-installer.png)
 
 a little cli installer for installing Airpub easier
 
