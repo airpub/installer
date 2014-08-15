@@ -1,20 +1,21 @@
-## airpub-installer ![npm](https://badge.fury.io/js/airpub-installer.png)
+## Airpub-installer ![npm](https://badge.fury.io/js/airpub-installer.png)
 
-a little installer
+a little cli installer for installing Airpub easier
 
 ### Installation
 ````
-$ [sudo] npm install airpub-installer
+$ [sudo] npm install -g airpub-installer
 ````
-
 
 ### Example
-````javascript
-var airpub-installer = require('airpub-installer');
-````
-
-### API
-check this file: `index.js`
+install the latest stable version of Airpub:
+```bash
+$ airpub install
+```
+install a spec version of Airpub:
+```bash
+$ airpub install 0.1.0
+```
 
 ### Contributing
 - Fork this repo
