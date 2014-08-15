@@ -16,6 +16,10 @@ install a spec version of Airpub:
 ```bash
 $ airpub install 0.1.0
 ```
+uninstall current working airpub, will remove all file in `cwd`:
+```bash
+$ airpub uninstall
+```
 
 ### Contributing
 - Fork this repo
