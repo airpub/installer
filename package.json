@@ -1,8 +1,8 @@
 {
   "name": "airpub-installer",
-  "version": "0.1.0",
-  "description": "a little installer",
-  "main": "index.js",
+  "version": "0.2.0",
+  "description": "a little cli installer for installing Airpub easier",
+  "main": "bin/cli",
   "bin": {
     "airpub": "bin/cli"
   },
