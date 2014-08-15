@@ -1,0 +1,14 @@
+#!/bin/bash
+
+cd $(pwd);
+
+if [[ $1 == 'install' ]]; then
+  # $2 must be version number
+  if [[ $2 ]]; then
+    npm install airpub@$2
+  fi
+  npm install airpub
+  mv node_modules/airpub/* . && rm -rf node_modules
+elif [[ $1 == 'uninstall' ]]; then
+  rm -rf * # will remove all files in CWD [!!!]
+fi
