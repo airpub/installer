@@ -1,6 +1,6 @@
 {
   "name": "airpub-installer",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "description": "a little cli installer for installing Airpub easier",
   "main": "bin/cli",
   "bin": {
