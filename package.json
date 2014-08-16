@@ -19,5 +19,8 @@
   "bugs": {
     "url": "https://github.com/airpub/installer/issues"
   },
-  "homepage": "https://github.com/airpub/installer"
+  "homepage": "https://github.com/airpub/installer",
+  "dependencies": {
+    "shelljs": "^0.3.0"
+  }
 }
