@@ -1,26 +1,30 @@
-#!/bin/bash
+#!/usr/bin/env node
 
-cd $(pwd);
+require('shelljs/global');
 
-if [[ $1 == 'install' ]]; then
-  # $2 must be version number
-  if [[ $2 ]]; then
-    npm install airpub@$2
-  fi
-  # install and clean src files
-  npm install airpub
-  mv node_modules/airpub/* .
-  rm -rf node_modules
-  # copy configs
-  cp configs-sample.js configs.js
-  # install bower deps
-  if hash bower 2>/dev/null; then
-    bower install 
-  else
-    echo '缺少 bower! 请手动安装 bower 后执行 bower install 安装依赖';
-    exit 1;
-  fi
-elif [[ $1 == 'uninstall' ]]; then
-  # will remove all files in CWD [!!!]
-  rm -rf * 
-fi
+if (!which('bower')) {
+  echo('缺少 bower! 请手动安装 bower 后执行 bower install 安装依赖');
+  exit(1);
+}
+
+cd(pwd());
+
+var argv = process.argv;
+var version = '';
+if(argv[2] == 'install'){
+    //argv[3] must be version number
+    if(argv[3]){
+        version = '@' + argv[3];
+    }
+    //install and clean src files
+    exec('npm install airpub' + version);
+    exec('mv node_modules/airpub/* .');
+    exec('rm -rf node_modules');
+    //copy configs
+    exec('cp configs-sample.js configs.js');
+    //install bower deps
+    exec('bower install');
+}else if(argv[2] == 'uninstall'){
+    //will remove all files in CWD [!!!]
+    exec('rm -rf *');
+}
