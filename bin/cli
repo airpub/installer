@@ -11,20 +11,21 @@ cd(pwd());
 
 var argv = process.argv;
 var version = '';
-if(argv[2] == 'install'){
-    //argv[3] must be version number
-    if(argv[3]){
-        version = '@' + argv[3];
-    }
-    //install and clean src files
-    exec('npm install airpub' + version);
-    exec('mv node_modules/airpub/* .');
-    exec('rm -rf node_modules');
-    //copy configs
-    exec('cp configs-sample.js configs.js');
-    //install bower deps
-    exec('bower install');
-}else if(argv[2] == 'uninstall'){
-    //will remove all files in CWD [!!!]
-    exec('rm -rf *');
+
+if (argv[2] == 'install') {
+  //argv[3] must be version number
+  if (argv[3]) {
+    version = '@' + argv[3];
+  }
+  //install and clean src files
+  exec('npm install airpub' + version);
+  exec('mv node_modules/airpub/* .');
+  exec('rm -rf node_modules');
+  //copy configs
+  exec('cp configs-sample.js configs.js');
+  //install bower deps
+  exec('bower install');
+} else if (argv[2] == 'uninstall') {
+  //will remove all files in CWD [!!!]
+  exec('rm -rf *');
 }
